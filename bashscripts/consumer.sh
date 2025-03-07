@@ -10,6 +10,8 @@ while true
 do
 	if read line <${PIPENAME}
 	then
-		printf "$line"
+		eval $"stress-ng $line"
 	fi
 done
+
+#example input command: printf "%s\n"  "--matrix 1 -t 20s" > stress-ng-pipe-fifo

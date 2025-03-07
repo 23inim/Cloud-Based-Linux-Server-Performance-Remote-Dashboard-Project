@@ -6,4 +6,5 @@ then
 	mkfifo ${PIPENAME}
 fi
 
-echo  "test" > "${PIPENAME}"
+
+printf "--matrix 1 -t 20s" > "${PIPENAME}"
