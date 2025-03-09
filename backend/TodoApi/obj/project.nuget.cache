@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "dgSpecHash": "/WoHDBwnrms=",
+  "success": true,
+  "projectFilePath": "/home/inim23/Classes/System admin using unix/Midterm/Cloud-Based-Linux-Server-Performance-Remote-Dashboard-Project/backend/TodoApi/TodoApi.csproj",
+  "expectedPackageFiles": [
+    "/home/inim23/.nuget/packages/microsoft.aspnetcore.openapi/9.0.0-rc.2.24474.3/microsoft.aspnetcore.openapi.9.0.0-rc.2.24474.3.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.entityframeworkcore/9.0.2/microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.2/microsoft.entityframeworkcore.abstractions.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.entityframeworkcore.analyzers/9.0.2/microsoft.entityframeworkcore.analyzers.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.entityframeworkcore.inmemory/9.0.2/microsoft.entityframeworkcore.inmemory.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.apidescription.server/6.0.3/microsoft.extensions.apidescription.server.6.0.3.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.2/microsoft.extensions.caching.abstractions.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.caching.memory/9.0.2/microsoft.extensions.caching.memory.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.2/microsoft.extensions.dependencyinjection.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.2/microsoft.extensions.dependencyinjection.abstractions.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.fileproviders.abstractions/9.0.0/microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.fileproviders.embedded/9.0.0/microsoft.extensions.fileproviders.embedded.9.0.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.logging/9.0.2/microsoft.extensions.logging.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.2/microsoft.extensions.logging.abstractions.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.options/9.0.2/microsoft.extensions.options.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.extensions.primitives/9.0.2/microsoft.extensions.primitives.9.0.2.nupkg.sha512",
+    "/home/inim23/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
+    "/home/inim23/.nuget/packages/namedpipewrapper/1.5.0/namedpipewrapper.1.5.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/namotion.reflection/3.2.0/namotion.reflection.3.2.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/home/inim23/.nuget/packages/njsonschema/11.1.0/njsonschema.11.1.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/njsonschema.annotations/11.1.0/njsonschema.annotations.11.1.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/njsonschema.newtonsoftjson/11.1.0/njsonschema.newtonsoftjson.11.1.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/njsonschema.yaml/11.1.0/njsonschema.yaml.11.1.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/nswag.annotations/14.2.0/nswag.annotations.14.2.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/nswag.aspnetcore/14.2.0/nswag.aspnetcore.14.2.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/nswag.core/14.2.0/nswag.core.14.2.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/nswag.core.yaml/14.2.0/nswag.core.yaml.14.2.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/nswag.generation/14.2.0/nswag.generation.14.2.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/nswag.generation.aspnetcore/14.2.0/nswag.generation.aspnetcore.14.2.0.nupkg.sha512",
+    "/home/inim23/.nuget/packages/yamldotnet/16.2.0/yamldotnet.16.2.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NamedPipeWrapper 1.5.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NamedPipeWrapper",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
+}

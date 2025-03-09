@@ -1,0 +1,89 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/inim23/Classes/System admin using unix/Midterm/Cloud-Based-Linux-Server-Performance-Remote-Dashboard-Project/backend/TodoApi/TodoApi.csproj": {}
+  },
+  "projects": {
+    "/home/inim23/Classes/System admin using unix/Midterm/Cloud-Based-Linux-Server-Performance-Remote-Dashboard-Project/backend/TodoApi/TodoApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/inim23/Classes/System admin using unix/Midterm/Cloud-Based-Linux-Server-Performance-Remote-Dashboard-Project/backend/TodoApi/TodoApi.csproj",
+        "projectName": "TodoApi",
+        "projectPath": "/home/inim23/Classes/System admin using unix/Midterm/Cloud-Based-Linux-Server-Performance-Remote-Dashboard-Project/backend/TodoApi/TodoApi.csproj",
+        "packagesPath": "/home/inim23/.nuget/packages/",
+        "outputPath": "/home/inim23/Classes/System admin using unix/Midterm/Cloud-Based-Linux-Server-Performance-Remote-Dashboard-Project/backend/TodoApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/inim23/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib64/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24474.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[14.2.0, )"
+            },
+            "NamedPipeWrapper": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.103/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

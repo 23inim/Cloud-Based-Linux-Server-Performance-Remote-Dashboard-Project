@@ -1,12 +1,6 @@
 #!/bin/bash
 
-PIPEIN="sng_pipe_in.fifo"
-PIPEOUT="sng_pipe_out.fifo"
-
-# Ensure the FIFO exists
-if [[ ! -p "$PIPEIN" ]]; then
-    mkfifo "$PIPEIN"
-fi
+PIPEIN="status_pipe_out.fifo"
 
 # Ensure the FIFO exists
 if [[ ! -p "$PIPEOUT" ]]; then
@@ -17,5 +11,5 @@ fi
 echo "Consumer is waiting for messages..."
 while true; do
     read line < "$PIPEIN"
-        echo $(eval "stress-ng $line") > "$PIPEOUT"
+    echo $"$line"
 done
