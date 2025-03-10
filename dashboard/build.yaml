@@ -1,0 +1,11 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - swaggerSource/**
+    builders:
+      swagger_dart_code_generator:
+        options:
+          input_folder: "swaggerSource/"
+          output_folder: "lib/generated/"
+          enum_name: true

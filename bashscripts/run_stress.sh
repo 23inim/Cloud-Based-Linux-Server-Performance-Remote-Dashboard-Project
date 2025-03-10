@@ -14,8 +14,11 @@ if [[ ! -p "$PIPEOUT" ]]; then
 fi
 
 # Read messages line by line from the FIFO
-echo "Consumer is waiting for messages..."
+echo "Stress-ng service is started"
 while true; do
     read line < "$PIPEIN"
-        echo $(eval "stress-ng $line") > "$PIPEOUT"
+	echo "Starting next stress test"
+        output=$(eval "stress-ng $line")
+	echo $output
+	echo $output > "$PIPEOUT"
 done

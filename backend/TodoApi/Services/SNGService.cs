@@ -29,6 +29,7 @@ public sealed class SNGService
         }
 
         thread = new Thread(() =>{
+            Console.WriteLine("Started to listen for stress-ng service");
             while (true)
             {
                 using (FileStream fs = new FileStream(pipeIn, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -54,14 +55,33 @@ public sealed class SNGService
         }
     }
 
-    public bool StartNewTest(int s) {
+    public bool StartNewTest(int s, TestType type) {
         lock (lockObj) {
             if (testInProgress) {
                 return false;
             }
 
             testInProgress = true;
-            Write($"--matrix 1 -t {s}s");
+            string execValue;
+            switch(type){
+                default:
+                case TestType.matrix:
+                    execValue = "--matrix 2";
+                    break;
+                case TestType.hdd:
+                    execValue = "--hdd 4";
+                    break;
+                case TestType.netdev:
+                    execValue = "--netdev 4";
+                    break;
+                case TestType.swap:
+                    execValue = "--swap 2";
+                    break;
+                case TestType.vm:
+                    execValue = "--vm 4";
+                    break;
+            }
+            Write($"{execValue} -t {s}s");
             return true;
         }
     }

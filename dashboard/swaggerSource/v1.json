@@ -1,0 +1,249 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TodoApi | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5231"
+    }
+  ],
+  "paths": {
+    "/Stressng": {
+      "get": {
+        "tags": [
+          "Stressng"
+        ],
+        "operationId": "GetLastStressngMSG",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Stressng"
+        ],
+        "operationId": "ahh",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StressParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StressParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StressParam"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Stressng/GetHistory": {
+      "get": {
+        "tags": [
+          "Stressng"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Status"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Status"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Status"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Status": {
+        "type": "object",
+        "properties": {
+          "totalMem": {
+            "type": "number",
+            "format": "float"
+          },
+          "usedMem": {
+            "type": "number",
+            "format": "float"
+          },
+          "freeMem": {
+            "type": "number",
+            "format": "float"
+          },
+          "totalSwap": {
+            "type": "number",
+            "format": "float"
+          },
+          "usedSwap": {
+            "type": "number",
+            "format": "float"
+          },
+          "freeSwap": {
+            "type": "number",
+            "format": "float"
+          },
+          "cpuUsage": {
+            "type": "number",
+            "format": "float"
+          },
+          "diskW": {
+            "type": "number",
+            "format": "float"
+          },
+          "diskR": {
+            "type": "number",
+            "format": "float"
+          },
+          "rxBytes": {
+            "type": "number",
+            "format": "float"
+          },
+          "txBytes": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
+      "StressParam": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/TestType"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TestType": {
+        "type": "integer"
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Stressng"
+    },
+    {
+      "name": "WeatherForecast"
+    }
+  ]
+}
