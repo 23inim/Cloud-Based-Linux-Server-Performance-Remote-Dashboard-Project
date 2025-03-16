@@ -10,7 +10,7 @@ fi
 netInterface='wlp5s0'
 drive='nvme1n1'
 
-diskUsage=$(iostat | grep $drive)
+diskUsage=$(iostat -m | grep $drive)
 
 previousDiskR=$(echo $diskUsage | awk '{print $6}')
 previousDiskW=$(echo $diskUsage | awk '{print $7}')
@@ -21,7 +21,7 @@ previous_bytes_tx=$(cat '/proc/net/dev' | grep $netInterface | awk '{print $10}'
 
 # Read messages line by line from the FIFO
 while true; do
-    freeOutput=$(eval "free")
+    freeOutput=$(eval "free -m")
     totalMem=$(echo "$freeOutput" | awk 'NR==2{print $2}')
     usedMem=$(echo "$freeOutput" | awk 'NR==2{print $3}')
     freeMem=$(echo "$freeOutput" | awk 'NR==2{print $4}')
@@ -31,7 +31,7 @@ while true; do
 
     cpuUsage=$(top -bn1 | awk 'NR==3{print $8}')
 
-    diskUsage=$(iostat -k | grep $drive)
+    diskUsage=$(iostat -m | grep $drive)
 
     newDiskR=$(echo $diskUsage | awk '{print $6}')
     newDiskW=$(echo $diskUsage | awk '{print $7}')
