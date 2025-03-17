@@ -45,7 +45,7 @@ class _MainPage extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    _api = V1.create(baseUrl: Uri.parse('http://localhost:5231'));
+    _api = V1.create(baseUrl: Uri.parse('http://35.224.235.45:5000'));
     timer = Timer.periodic(Duration(milliseconds: 100), (t) async {
       await updateData();
     });
@@ -56,28 +56,32 @@ class _MainPage extends State<MainPage> {
       return;
     }
 
-    var result = await _api!.stressngGetHistoryGet();
+    try{
+      var result = await _api!.stressngGetHistoryGet();
 
-    if (result.isSuccessful && mounted) {
-      data = result.body!;
-      cpuAlarm = false;
-      memAlarm = false;
-      swapAlarm = false;
-      for (var value in data) {
-        if (cpuThreshold <= (value.cpuUsage ?? 0)) {
-          cpuAlarm = true;
+      if (result.isSuccessful && mounted) {
+        data = result.body!;
+        cpuAlarm = false;
+        memAlarm = false;
+        swapAlarm = false;
+        for (var value in data) {
+          if (cpuThreshold <= (value.cpuUsage ?? 0)) {
+            cpuAlarm = true;
+          }
+          if (memThreshold <=
+              (value.usedMem ?? 0) / (value.totalMem ?? 1) * 100.0) {
+            memAlarm = true;
+          }
+          if (swapThreshold <=
+              (value.usedSwap ?? 0) / (value.totalSwap ?? 1) * 100.0) {
+            swapAlarm = true;
+          }
         }
-        if (memThreshold <=
-            (value.usedMem ?? 0) / (value.totalMem ?? 1) * 100.0) {
-          memAlarm = true;
-        }
-        if (swapThreshold <=
-            (value.usedSwap ?? 0) / (value.totalSwap ?? 1) * 100.0) {
-          swapAlarm = true;
-        }
+
+        setState(() {});
       }
-
-      setState(() {});
+    } catch (e) {
+      return;
     }
   }
 
@@ -139,6 +143,11 @@ class _MainPage extends State<MainPage> {
       }
     }
 
+    var totalSwap = (data.first.totalSwap ?? 1);
+    if(totalSwap == 0){
+      totalSwap = 1;
+    }
+
     return Center(
       child: Column(
         children: [
@@ -182,12 +191,14 @@ class _MainPage extends State<MainPage> {
                   ElevatedButton(
                     onPressed: () async {
                       if (_api != null) {
-                        await _api!.stressngPost(
+                        print("attempting to run stress-ng");
+                        var result = await _api!.stressngPost(
                           body: StressParam(
                             duration: timeStress,
                             type: selectedTest,
                           ),
                         );
+                        print(result);
                       }
                     },
                     child: Text("Start Stress-ng"),
@@ -520,7 +531,7 @@ class _MainPage extends State<MainPage> {
                                     .mapIndexed(
                                       (index, obj) => FlSpot(
                                         index.toDouble(),
-                                        obj.usedSwap! / obj.totalSwap! * 100,
+                                        obj.usedSwap! / totalSwap * 100,
                                       ),
                                     )
                                     .toList(),
